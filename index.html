@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio étudiant : à propos, projets, contact." />
 </head>
 
-<body class="min-h-screen bg-slate-50 text-slate-900">
+<body class="min-h-screen bg-[#00162B] text-slate-900">
   <!-- Skip link (accessibilité) -->
   <a href="#contenu"
      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:shadow">
@@ -15,12 +15,9 @@
   </a>
 
   <!-- HEADER + NAV -->
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
-    <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3">
-      <a href="#" class="flex items-center gap-2 font-extrabold tracking-tight">
-        <span class="grid h-9 w-9 place-items-center rounded-xl bg-slate-900 text-white">OK</span>
-        <span>Onur Kucukkaya</span>
-      </a>
+  <header class="sticky top-0 z-50 border-slate-200">
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-center gap-3 px-4 py-3">
+      
 
       <nav aria-label="Navigation principale" class="hidden md:block">
         <ul class="flex items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-sm">
@@ -30,18 +27,7 @@
         </ul>
       </nav>
 
-      <div class="flex items-center gap-2">
-        <a href="cv.pdf"
-           class="hidden sm:inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold hover:bg-slate-100">
-          CV (PDF)
-        </a>
-        <a href="#contact"
-           class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-3 py-2 text-sm font-bold text-white shadow hover:bg-slate-800">
-          Me contacter
-        </a>
-      </div>
-    </div>
-
+      
     <!-- Nav mobile -->
     <nav aria-label="Navigation mobile" class="md:hidden">
       <div class="mx-auto max-w-6xl px-4 pb-3">
@@ -85,8 +71,7 @@
                 </h1>
 
                 <p class="mt-3 max-w-prose text-base leading-relaxed text-slate-700">
-                  Je recherche un stage en <strong>développement web</strong>. J’aime construire des projets concrets :
-                  interfaces modernes, intégration d’API et code propre. Mon objectif : apprendre en équipe sur des missions réelles.
+                  Je cherche un stage en développement web pour continuer à progresser sur des projets concrets. Ce que j’aime : construire des interfaces modernes, connecter des API et améliorer le code jusqu’à ce qu’il soit simple, lisible et maintenable. Je veux apprendre en équipe et participer à des missions réelles, du brief à la mise en ligne.
                 </p>
               </header>
 
@@ -137,7 +122,133 @@
           </div>
         </header>
 
-        <div class="mt-6 grid gap-4 md:grid-cols-3" role="list">
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
+            <header>
+              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
+              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                <img class="h-40 w-full object-cover"
+                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
+                     alt="Capture d’écran du projet 1" />
+              </figure>
+              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
+            </header>
+
+            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
+
+            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
+            </div>
+
+            <footer class="mt-5 flex gap-3">
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
+            </footer>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
+            <header>
+              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
+              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                <img class="h-40 w-full object-cover"
+                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
+                     alt="Capture d’écran du projet 1" />
+              </figure>
+              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
+            </header>
+
+            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
+
+            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
+            </div>
+
+            <footer class="mt-5 flex gap-3">
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
+            </footer>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
+            <header>
+              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
+              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                <img class="h-40 w-full object-cover"
+                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
+                     alt="Capture d’écran du projet 1" />
+              </figure>
+              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
+            </header>
+
+            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
+
+            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
+            </div>
+
+            <footer class="mt-5 flex gap-3">
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
+            </footer>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
+            <header>
+              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
+              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                <img class="h-40 w-full object-cover"
+                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
+                     alt="Capture d’écran du projet 1" />
+              </figure>
+              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
+            </header>
+
+            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
+
+            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
+            </div>
+
+            <footer class="mt-5 flex gap-3">
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
+            </footer>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
+            <header>
+              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
+              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                <img class="h-40 w-full object-cover"
+                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
+                     alt="Capture d’écran du projet 1" />
+              </figure>
+              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
+            </header>
+
+            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
+
+            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
+              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
+            </div>
+
+            <footer class="mt-5 flex gap-3">
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
+              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
+            </footer>
+          </article>
+
           <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
             <header>
               <h3 class="text-lg font-black">Projet 1 — Nom</h3>
@@ -167,6 +278,8 @@
         </div>
       </div>
     </section>
+
+    
 
     <!-- CONTACT (sémantique) -->
     <section id="contact" aria-labelledby="contact-title" class="py-14">
@@ -224,7 +337,7 @@
                   name="message"
                   required
                   placeholder="Bonjour Onur, je te contacte pour…"
-                  class="mt-2 min-h-[140px] w-full resize-y rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-4 focus:ring-slate-200"
+                  class="mt-2 min-h-35 w-full resize-y rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-4 focus:ring-slate-200"
                 ></textarea>
               </div>
 
