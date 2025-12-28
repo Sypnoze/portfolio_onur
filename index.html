@@ -165,103 +165,120 @@
 
 
     <!-- PROJETS -->
-    <section id="projets" aria-label="Mes projets" class="py-14. bg-[#00425d]">
-      <div class="mx-auto w-full max-w-6xl px-4">
-        <header class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 class="text-2xl font-black tracking-tight">Mes projets</h2>
-            <p class="mt-1 max-w-prose text-slate-700">
-              Pour chaque projet : image, description courte, technos, liens (démo + code).
-            </p>
-          </div>
-        </header>
+<section id="projets" aria-label="Mes projets" class="min-h-screen flex items-center bg-gradient-to-br from-[#dba11c] to-[#f3d07a]">
+  <div class="mx-auto w-full max-w-6xl px-4">
+    <header class="relative h-10">
+  <h2 class="absolute top-0 left-1/2 -translate-x-1/2 text-2xl font-black tracking-tight">
+    Mes projets
+  </h2>
+</header>
 
-        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
 
-          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
-            <header>
-              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
-              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-                <img class="h-40 w-full object-cover"
-                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
-                     alt="Capture d’écran du projet 1" />
-              </figure>
-              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
-            </header>
 
-            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
+    <!-- Slider + flèches -->
+    <div class="mt-8 mx-auto max-w-xl sm:max-w-2xl relative">
+      <!-- Flèche gauche -->
+      <button
+        type="button"
+        class="absolute left-0 top-1/2 -translate-x-full -translate-y-1/2 rounded-full bg-white/90 px-4 py-2 font-bold text-slate-900 shadow hover:bg-white z-10"
+        data-prev
+        aria-label="Projet précédent"
+      >
+        ←
+      </button>
 
-            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
-            </div>
+      <!-- Fenêtre du slider (c’est elle qui coupe le contenu, pas les flèches) -->
+      <div class="overflow-hidden" data-slider>
+        <ul class="flex transition-transform duration-500 ease-out" data-track role="list">
+          <!-- Slide 1 -->
+          <li class="w-full shrink-0 px-1" role="listitem">
+            <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+              <header>
+                <h3 class="text-lg font-black">Projet 1 — Nom</h3>
+                <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                  <img
+                    class="h-56 w-full object-cover"
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
+                    alt="Capture d’écran du projet 1"
+                  />
+                </figure>
+                <p class="mt-3 text-sm font-semibold text-slate-600">Projet école • 2025</p>
+              </header>
 
-            <footer class="mt-5 flex gap-3">
-              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
-              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
-            </footer>
-          </article>
+              <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
 
-          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
-            <header>
-              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
-              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-                <img class="h-40 w-full object-cover"
-                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
-                     alt="Capture d’écran du projet 1" />
-              </figure>
-              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
-            </header>
+              <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+                <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
+                <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
+                <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
+              </div>
+            </article>
+          </li>
 
-            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
+          <!-- Slide 2 -->
+          <li class="w-full shrink-0 px-1" role="listitem">
+            <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+              <header>
+                <h3 class="text-lg font-black">Projet 2 — Nom</h3>
+                <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                  <img
+                    class="h-56 w-full object-cover"
+                    src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=60"
+                    alt="Capture d’écran du projet 2"
+                  />
+                </figure>
+                <p class="mt-3 text-sm font-semibold text-slate-600">Projet perso • 2025</p>
+              </header>
 
-            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
-            </div>
+              <p class="mt-3 text-slate-700">2–3 lignes : problème + solution + ton rôle.</p>
+            </article>
+          </li>
 
-            <footer class="mt-5 flex gap-3">
-              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
-              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
-            </footer>
-          </article>
+          <!-- Slide 3 -->
+          <li class="w-full shrink-0 px-1" role="listitem">
+            <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+              <header>
+                <h3 class="text-lg font-black">Projet 3 — Nom</h3>
+                <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                  <img
+                    class="h-56 w-full object-cover"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=60"
+                    alt="Capture d’écran du projet 3"
+                  />
+                </figure>
+                <p class="mt-3 text-sm font-semibold text-slate-600">Hackathon • 2024</p>
+              </header>
 
-          <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" role="listitem">
-            <header>
-              <h3 class="text-lg font-black">Projet 1 — Nom</h3>
-              <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-                <img class="h-40 w-full object-cover"
-                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60"
-                     alt="Capture d’écran du projet 1" />
-              </figure>
-              <p class="mt-3 text-sm font-semibold text-slate-600">Projet école / perso • 2025</p>
-            </header>
-
-            <p class="mt-3 text-slate-700">2–3 lignes : objectif + fonctionnalités principales.</p>
-
-            <div class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">HTML</span>
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">CSS</span>
-              <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold">JS</span>
-            </div>
-
-            <footer class="mt-5 flex gap-3">
-              <a href="#" class="font-extrabold text-slate-900 hover:underline">Démo</a>
-              <a href="#" class="font-extrabold text-slate-900 hover:underline">Code</a>
-            </footer>
-          </article>
-
-          <!-- Duplique l'article pour ajouter d'autres projets -->
-        </div>
+              <p class="mt-3 text-slate-700">2–3 lignes : ce que ça fait et ce que tu as appris.</p>
+            </article>
+          </li>
+        </ul>
       </div>
-    </section>
+
+      <!-- Flèche droite -->
+      <button
+        type="button"
+        class="absolute right-0 top-1/2 translate-x-full -translate-y-1/2 rounded-full bg-white/90 px-4 py-2 font-bold text-slate-900 shadow hover:bg-white z-10"
+        data-next
+        aria-label="Projet suivant"
+      >
+        →
+      </button>
+    </div>
+
+    <!-- Indicateur -->
+    <p class="mt-4 text-sm font-semibold text-slate-900/80">
+      <span data-counter>1</span>/<span data-total>3</span>
+    </p>
+  </div>
+</section>
+
+
 
     
 
     <!-- CONTACT (sémantique) -->
-    <section id="contact" aria-labelledby="contact-title" class="py-14. bg-[#887456]">
+    <section id="contact" aria-labelledby="contact-title" class="min-h-screen flex items-center py-14. bg-[#887456]">
       <div class="mx-auto w-full max-w-6xl px-4">
         <header class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
