@@ -1,2 +1,23 @@
 @import "tailwindcss";
 
+/* Scroll reveal */
+.fx-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+
+.fx-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibilité : si l’utilisateur préfère réduire les animations */
+@media (prefers-reduced-motion: reduce) {
+  .fx-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

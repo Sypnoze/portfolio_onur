@@ -43,3 +43,25 @@ if (slider && track && prevBtn && nextBtn) {
 
   update();
 }
+
+
+// Scroll reveal (Intersection Observer)
+const ratio = 0.12;
+
+const observer = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > ratio) {
+        entry.target.classList.add("fx-reveal-visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: "0px 0px -10% 0px", // déclenche un peu avant le bas
+    threshold: ratio,
+  }
+);
+
+document.querySelectorAll(".fx-reveal").forEach((el) => observer.observe(el));
