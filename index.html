@@ -6,13 +6,12 @@
   <title>Portfolio — Onur Kucukkaya</title>
   <meta name="description" content="Portfolio étudiant : à propos, projets, contact." />
   <link rel="icon" type="image/png" href="./src/logoportfolio.png" />
-
 </head>
 
-<body class="min-h-screen bg-linear-to-br from-[#01162C] via-[#0B3E70] to-[#13A0FF]">
+<body class="min-h-screen bg-[#00162A] text-white">
   <!-- Skip link (accessibilité) -->
   <a href="#contenu"
-     class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:shadow">
+     class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:shadow">
     Aller au contenu
   </a>
 
@@ -22,11 +21,11 @@
 
       <!-- Nav desktop -->
       <nav aria-label="Navigation principale" class="hidden md:block text-[#dba11c]">
-        <ul class="flex items-center gap-1 rounded-full border border-[#00425d] bg-[#00425d] p-1 shadow-sm">
-          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-slate-100" href="#accueil">Accueil</a></li>
-          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-slate-100" href="#a-propos">À propos</a></li>
-          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-slate-100" href="#projets">Mes projets</a></li>
-          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-slate-100" href="#contact">Contact</a></li>
+        <ul class="flex items-center gap-1 rounded-full border border-white/15 bg-white/5 p-1 shadow-sm backdrop-blur">
+          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40" href="#accueil">Accueil</a></li>
+          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40" href="#a-propos">À propos</a></li>
+          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40" href="#projets">Mes projets</a></li>
+          <li><a class="rounded-full px-4 py-2 text-sm font-semibold hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -36,19 +35,19 @@
       <div class="mx-auto max-w-6xl px-4 pb-3">
         <ul class="grid grid-cols-2 gap-2">
           <li>
-            <a class="block rounded-xl border border-slate-200 bg-white px-3 py-2 text-center text-sm font-semibold hover:bg-slate-100"
+            <a class="block rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-center text-sm font-semibold text-[#dba11c] hover:bg-white/10 backdrop-blur"
                href="#accueil">Accueil</a>
           </li>
           <li>
-            <a class="block rounded-xl border border-slate-200 bg-white px-3 py-2 text-center text-sm font-semibold hover:bg-slate-100"
+            <a class="block rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-center text-sm font-semibold text-[#dba11c] hover:bg-white/10 backdrop-blur"
                href="#a-propos">À propos</a>
           </li>
           <li>
-            <a class="block rounded-xl border border-slate-200 bg-white px-3 py-2 text-center text-sm font-semibold hover:bg-slate-100"
+            <a class="block rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-center text-sm font-semibold text-[#dba11c] hover:bg-white/10 backdrop-blur"
                href="#projets">Projets</a>
           </li>
           <li>
-            <a class="block rounded-xl border border-slate-200 bg-white px-3 py-2 text-center text-sm font-semibold hover:bg-slate-100"
+            <a class="block rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-center text-sm font-semibold text-[#dba11c] hover:bg-white/10 backdrop-blur"
                href="#contact">Contact</a>
           </li>
         </ul>
@@ -62,13 +61,13 @@
     <section
       id="accueil"
       aria-label="Accueil"
-      class="min-h-screen bg-linear-to-br from-[#01162C] via-[#0B3E70] to-[#13A0FF] text-white"
+      class="min-h-screen flex items-center py-14"
     >
-      <div class="mx-auto flex min-h-screen w-full max-w-6xl items-center px-4 py-14">
+      <div class="mx-auto flex w-full max-w-6xl items-center px-4">
         <div class="grid w-full items-center gap-8 md:grid-cols-12">
           <!-- Image -->
           <figure class="md:col-span-5">
-            <div class="mx-auto md:mx-0 aspect-709/1200 w-full max-w-[320px] md:max-w-90 overflow-hidden rounded-2xl bg-white/10">
+            <div class="mx-auto md:mx-0 aspect-709/1200 w-full max-w-[320px] md:max-w-90 overflow-hidden rounded-2xl bg-white/10 border border-white/10">
               <img
                 class="h-full w-full object-cover"
                 src="/src/Imageaccueil .jpeg"
@@ -85,7 +84,7 @@
               </h1>
 
               <p class="mt-4 max-w-prose text-base leading-relaxed text-white/90">
-                étudiant en développement web à l’EAFC Fléron.
+                Étudiant en développement web à l’EAFC Fléron.
                 J’aime quand chaque action se voit directement dans mes projets :
                 une interface plus claire, une page plus fluide, un détail mieux fini.
                 J’aime créer des sites modernes, responsive, et écrire du code simple et maintenable.
@@ -100,7 +99,7 @@
     <section
       id="a-propos"
       aria-labelledby="apropos-title"
-      class="min-h-screen py-14 flex items-center text-slate-900 bg-gradient-to-b from-[#ffedcb] to-[#fff7e8]"
+      class="min-h-screen py-14 flex items-center"
     >
       <div class="mx-auto w-full max-w-6xl px-4">
         <header class="max-w-3xl">
@@ -108,17 +107,20 @@
             À propos
           </h2>
 
-          <p class="mt-4 leading-relaxed">
+          <p class="mt-4 leading-relaxed text-white/90">
             Je m’appelle Onur Kucukkaya et je suis étudiant en développement web à l’EAFC Fléron.
             J’ai commencé par les bases du web avec HTML/CSS (Tailwind), puis j’ai ajouté JavaScript pour rendre mes pages plus interactives.
             Ensuite, je me suis orienté vers le back avec PHP et MySQL afin de mieux comprendre la logique serveur et la gestion des données.
-            Aujourd’hui, je continue à progresser avec Vue.js et Laravel, avec l’objectif de construire des projets plus complets et mieux structurés.
+            Aujourd’hui, je continue à progresser avec Vue.js et Laravel, avec l’objectif de construire des projets plus complets et mieux structurés,avec rigueur, autonomie et esprit d’équipe.
           </p>
+
+
+          
         </header>
 
         <div class="mt-10 grid gap-6 md:grid-cols-2">
           <!-- Compétences -->
-          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-3xl border border-white/15 bg-white p-6 shadow-sm text-slate-900">
             <h3 class="text-lg font-black">Compétences</h3>
 
             <ul class="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3" aria-label="Technologies apprises">
@@ -146,11 +148,17 @@
                 <img class="h-7 w-7" src="https://cdn.simpleicons.org/mysql" alt="MySQL" loading="lazy">
                 <span class="font-semibold">MySQL</span>
               </li>
+
+              <li class="flex items-center gap-3 px-4 py-3">
+             <img class="h-7 w-7" src="https://cdn.simpleicons.org/wordpress" alt="WordPress" loading="lazy">
+             <span class="font-semibold">WordPress</span>
+             </li>
+
             </ul>
           </article>
 
           <!-- En cours -->
-          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-3xl border border-white/15 bg-white p-6 shadow-sm text-slate-900">
             <h3 class="text-lg font-black">En cours d’apprentissage</h3>
 
             <ul class="mt-5 grid grid-cols-2 gap-4" aria-label="Technologies en apprentissage">
@@ -163,6 +171,13 @@
                 <img class="h-7 w-7" src="https://cdn.simpleicons.org/laravel" alt="Laravel" loading="lazy">
                 <span class="font-semibold">Laravel</span>
               </li>
+
+
+              <li class="flex items-center gap-3 px-4 py-3">
+             <img class="h-7 w-7" src="https://cdn.simpleicons.org/figma" alt="Figma" loading="lazy">
+             <span class="font-semibold">Figma</span>
+              </li>
+
             </ul>
           </article>
         </div>
@@ -170,7 +185,7 @@
     </section>
 
     <!-- PROJETS -->
-    <section id="projets" aria-label="Mes projets" class="min-h-screen flex items-center bg-gradient-to-br from-[#dba11c] to-[#f3d07a]">
+    <section id="projets" aria-label="Mes projets" class="min-h-screen flex items-center py-14">
       <div class="mx-auto w-full max-w-6xl px-4">
         <header class="relative h-10">
           <h2 class="absolute top-0 left-1/2 -translate-x-1/2 text-2xl font-black tracking-tight">
@@ -193,7 +208,7 @@
             <ul class="flex transition-transform duration-500 ease-out" data-track role="list">
               <!-- Slide 1 -->
               <li class="w-full shrink-0 px-1 flex md:block" role="listitem">
-                <article class="w-full h-full md:h-auto rounded-3xl border border-slate-200 bg-white p-5 shadow-sm flex flex-col md:block">
+                <article class="w-full h-full md:h-auto rounded-3xl border border-white/15 bg-white p-5 shadow-sm flex flex-col md:block text-slate-900">
                   <header>
                     <h3 class="text-lg font-black">Projet 1 — Nom</h3>
                     <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
@@ -218,7 +233,7 @@
 
               <!-- Slide 2 -->
               <li class="w-full shrink-0 px-1 flex md:block" role="listitem">
-                <article class="w-full h-full md:h-auto rounded-3xl border border-slate-200 bg-white p-5 shadow-sm flex flex-col md:block">
+                <article class="w-full h-full md:h-auto rounded-3xl border border-white/15 bg-white p-5 shadow-sm flex flex-col md:block text-slate-900">
                   <header>
                     <h3 class="text-lg font-black">Projet 2 — Nom</h3>
                     <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
@@ -243,7 +258,7 @@
 
               <!-- Slide 3 -->
               <li class="w-full shrink-0 px-1 flex md:block" role="listitem">
-                <article class="w-full h-full md:h-auto rounded-3xl border border-slate-200 bg-white p-5 shadow-sm flex flex-col md:block">
+                <article class="w-full h-full md:h-auto rounded-3xl border border-white/15 bg-white p-5 shadow-sm flex flex-col md:block text-slate-900">
                   <header>
                     <h3 class="text-lg font-black">Projet 3 — Nom</h3>
                     <figure class="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
@@ -278,112 +293,110 @@
           </button>
         </div>
 
-        <p class="mt-4 text-sm font-semibold text-slate-900/80">
+        <p class="mt-4 text-center text-sm font-semibold text-white/80">
           <span data-counter>1</span>/<span data-total>3</span>
         </p>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" aria-labelledby="contact-title" class="min-h-screen flex items-center py-14 bg-gradient-to-br from-[#dff1ff] via-[#f2f9ff] to-[#ffffff]">
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      class="min-h-screen flex items-center py-14"
+    >
       <div class="mx-auto w-full max-w-6xl px-4">
-        <header class="fx-reveal flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 id="contact-title" class="text-2xl font-black tracking-tight">Contact</h2>
-          </div>
+        <header class="fx-reveal text-center">
+          <h2 id="contact-title" class="text-2xl font-black tracking-tight">Contact</h2>
+          <p class="mt-2 text-white/80">
+            Tu peux me contacter directement via ces liens.
+          </p>
         </header>
 
-        <div class="mt-6 grid gap-4 md:grid-cols-12">
-          <form class="fx-reveal md:col-span-7 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm" action="#" method="post">
-            <fieldset>
-              <legend class="text-lg font-black">Envoyer un message</legend>
+        <!-- Coordonnées centrées -->
+        <div class="mt-8 flex justify-center">
+          <aside
+            class="fx-reveal w-full max-w-xl rounded-3xl border border-white/15 bg-white p-6 shadow-sm text-slate-900"
+            aria-labelledby="contact-details-title"
+          >
+            <h3 id="contact-details-title" class="text-lg font-black text-center">Coordonnées</h3>
 
-              <div class="mt-4 grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label for="name" class="text-sm font-extrabold text-slate-800">Nom</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required placeholder="Ton nom"
-                    class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-4 focus:ring-slate-200" />
-                </div>
-
-                <div>
-                  <label for="email" class="text-sm font-extrabold text-slate-800">Email</label>
-                  <input id="email" name="email" type="email" autocomplete="email" required placeholder="toi@mail.com"
-                    class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-4 focus:ring-slate-200" />
-                </div>
-              </div>
-
-              <div class="mt-4">
-                <label for="message" class="text-sm font-extrabold text-slate-800">Message</label>
-                <textarea id="message" name="message" required placeholder="Bonjour Onur, je te contacte pour…"
-                  class="mt-2 min-h-35 w-full resize-none rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-4 focus:ring-slate-200"></textarea>
-              </div>
-
-              <div class="mt-5 flex flex-wrap gap-3">
-                <button type="submit"
-                  class="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-slate-800">
-                  Envoyer
-                </button>
-
-                <a href="cv.pdf"
-                  class="rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold hover:bg-slate-100">
-                  CV (PDF)
-                </a>
-              </div>
-            </fieldset>
-          </form>
-
-          <aside class="fx-reveal md:col-span-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm" aria-labelledby="contact-details-title">
-            <h3 id="contact-details-title" class="text-lg font-black">Coordonnées</h3>
-
-            <address class="mt-4 not-italic">
+            <address class="mt-6 not-italic">
               <ul class="space-y-3">
+                <!-- Email -->
                 <li class="rounded-2xl border border-slate-200 bg-white p-4">
-                  <p class="text-xs font-semibold text-slate-600">Email</p>
-                  <a class="mt-1 block font-extrabold text-slate-900 hover:underline" href="mailto:prenom.nom@mail.com">
-                    prenom.nom@mail.com
+                  <p class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16v16H4z"/>
+                      <path d="m22 6-10 7L2 6"/>
+                    </svg>
+                    Email
+                  </p>
+                  <a
+                    class="mt-1 block font-extrabold text-slate-900 hover:underline break-words"
+                    href="mailto:onurkucukkaya.webdev@gmail.com"
+                  >
+                    onurkucukkaya.webdev@gmail.com
                   </a>
                 </li>
 
+                <!-- GitHub -->
                 <li class="rounded-2xl border border-slate-200 bg-white p-4">
-                  <p class="text-xs font-semibold text-slate-600">GitHub</p>
-                  <a class="mt-1 block font-extrabold text-slate-900 hover:underline" href="https://github.com/tonpseudo" target="_blank" rel="noreferrer">
-                    https://github.com/Sypnoze
+                  <p class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 .5C5.73.5.75 5.63.75 12c0 5.11 3.29 9.44 7.86 10.97.58.11.79-.25.79-.56v-2.06c-3.2.71-3.87-1.56-3.87-1.56-.53-1.38-1.29-1.74-1.29-1.74-1.05-.74.08-.73.08-.73 1.16.08 1.77 1.23 1.77 1.23 1.03 1.79 2.7 1.27 3.36.97.1-.76.4-1.27.73-1.56-2.55-.3-5.23-1.31-5.23-5.83 0-1.29.45-2.35 1.19-3.18-.12-.3-.52-1.52.11-3.17 0 0 .97-.32 3.18 1.22.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.54 3.18-1.22 3.18-1.22.63 1.65.23 2.87.11 3.17.74.83 1.19 1.89 1.19 3.18 0 4.53-2.69 5.53-5.25 5.82.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56 4.56-1.53 7.85-5.86 7.85-10.97C23.25 5.63 18.27.5 12 .5z"/>
+                    </svg>
+                    GitHub
+                  </p>
+                  <a
+                    class="mt-1 block font-extrabold text-slate-900 hover:underline break-words"
+                    href="https://github.com/Sypnoze"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    github.com/Sypnoze
                   </a>
                 </li>
 
+                <!-- Localisation -->
                 <li class="rounded-2xl border border-slate-200 bg-white p-4">
-                  <p class="text-xs font-semibold text-slate-600">LinkedIn</p>
-                  <a class="mt-1 block font-extrabold text-slate-900 hover:underline" href="https://linkedin.com/in/tonprofil" target="_blank" rel="noreferrer">
-                    linkedin.com/in/tonprofil
-                  </a>
-                </li>
-
-                <li class="rounded-2xl border border-slate-200 bg-white p-4">
-                  <p class="text-xs font-semibold text-slate-600">Localisation</p>
-                  <p class="mt-1 font-extrabold text-slate-900">Bruxelles</p>
+                  <p class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Localisation
+                  </p>
+                  <p class="mt-1 font-extrabold text-slate-900">Liège</p>
                 </li>
               </ul>
             </address>
+
+            <div class="mt-6 flex justify-center">
+              <a
+                href="cv.pdf"
+                class="rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold hover:bg-slate-100"
+              >
+                CV (PDF)
+              </a>
+            </div>
           </aside>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto max-w-6xl px-4 py-8">
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p class="text-sm text-slate-600">© <span id="year"></span> Onur Kucukkaya — Portfolio étudiant</p>
-        <nav aria-label="Liens footer">
-          <ul class="flex flex-wrap gap-3 text-sm font-semibold text-slate-700">
-            <li><a class="hover:underline" href="#a-propos">À propos</a></li>
-            <li><a class="hover:underline" href="#projets">Projets</a></li>
-            <li><a class="hover:underline" href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </footer>
+  <footer class="text-[#dba11c] bg-[#00162A]">
+  <div class="w-full px-2 py-8">
+    <p class="text-sm">© <span id="year"></span> Onur Kucukkaya</p>
+  </div>
+</footer>
+
+
+
+
+
 
   <script type="module" src="./src/main.js"></script>
 </body>
