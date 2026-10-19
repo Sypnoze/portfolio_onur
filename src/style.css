@@ -1,23 +1,278 @@
 @import "tailwindcss";
 
-/* Scroll reveal */
-.fx-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 600ms ease, transform 600ms ease;
-  will-change: opacity, transform;
+/* ───────────── Thème (couleurs du logo « OK ») ───────────── */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy-950: #000d1a;
+  --color-navy-900: #00162a;
+  --color-navy-800: #062440;
+  --color-gold: #dba11c;
+  --color-gold-soft: #f0c35a;
 }
 
-.fx-reveal-visible {
+/* ───────────── Base ───────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-navy-900 font-sans text-slate-300 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-white;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-navy-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+/* ───────────── Composants ───────────── */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* Titres de section */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 font-display text-sm font-semibold tracking-[0.18em] text-gold uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-gold/60;
+  }
+  .section-title {
+    @apply mt-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl;
+  }
+
+  .text-gradient {
+    background: linear-gradient(100deg, var(--color-gold-soft), var(--color-gold) 55%, #b97d0a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Boutons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-200;
+  }
+  .btn-primary {
+    @apply bg-gold text-navy-950 hover:-translate-y-0.5 hover:bg-gold-soft;
+    box-shadow: 0 10px 30px -12px rgb(219 161 28 / 0.7);
+  }
+  .btn-ghost {
+    @apply border border-white/15 bg-white/5 text-white hover:-translate-y-0.5 hover:border-gold/50 hover:bg-white/10;
+  }
+  .icon-btn {
+    @apply grid size-11 place-items-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold;
+  }
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-gold transition hover:text-gold-soft;
+  }
+  .link-arrow--muted {
+    @apply text-slate-400 hover:text-white;
+  }
+
+  /* Cartes */
+  .card {
+    @apply rounded-3xl border border-white/10 bg-white/[0.03];
+  }
+  .project {
+    @apply transition duration-300 hover:border-white/20 hover:bg-white/[0.05];
+  }
+  .tag {
+    @apply rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300;
+  }
+  .fact {
+    @apply flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-snug text-slate-400;
+  }
+  .fact strong {
+    @apply font-semibold text-white;
+  }
+
+  /* Navigation */
+  .site-header.is-scrolled .header-bar,
+  .site-header.is-open .header-bar {
+    @apply border-white/10 bg-navy-950/80 backdrop-blur-xl;
+  }
+  .nav-link {
+    @apply block rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:text-white;
+  }
+  .nav-link[aria-current="true"] {
+    @apply bg-white/10 text-gold;
+  }
+  .mobile-link {
+    @apply block rounded-xl px-4 py-3 font-display text-lg font-medium text-slate-200 transition hover:bg-white/5;
+  }
+  .mobile-link[aria-current="true"] {
+    @apply bg-white/5 text-gold;
+  }
+
+  /* Timeline */
+  .timeline {
+    @apply relative;
+  }
+  .timeline::before {
+    content: "";
+    @apply absolute top-2 bottom-2 left-[9.5px] w-px bg-linear-to-b from-white/15 via-white/15 to-gold/60;
+  }
+  .timeline-dot {
+    @apply absolute top-0.5 left-0 grid size-5 place-items-center rounded-full border border-white/20 bg-navy-900;
+  }
+  .timeline-dot::after {
+    content: "";
+    @apply size-1.5 rounded-full bg-slate-400;
+  }
+  .timeline-dot--now {
+    @apply border-gold/60;
+    box-shadow: 0 0 0 6px rgb(219 161 28 / 0.12);
+  }
+  .timeline-dot--now::after {
+    @apply size-2 bg-gold;
+  }
+
+  /* Compétences */
+  .skill-group-title {
+    @apply text-sm font-semibold tracking-[0.14em] text-slate-400 uppercase;
+  }
+  .skill {
+    @apply relative flex flex-col items-center gap-2.5 rounded-2xl border border-white/5 bg-white/[0.03] px-2 pt-4 pb-3 text-center text-xs font-medium text-slate-300 transition duration-200;
+  }
+  .skill svg {
+    @apply size-7 transition duration-200;
+    color: var(--brand);
+  }
+  .skill:hover {
+    @apply -translate-y-1 border-white/15 bg-white/[0.06] text-white;
+  }
+  .skill:hover svg {
+    @apply scale-110;
+  }
+  .skill-badge {
+    @apply absolute -top-2 rounded-full border border-gold/30 bg-navy-900 px-1.5 py-px text-[10px] leading-tight font-semibold text-gold;
+  }
+
+  /* Faux navigateur autour des captures */
+  .frame {
+    @apply overflow-hidden rounded-xl border border-white/10 bg-navy-950 shadow-2xl shadow-black/40;
+  }
+  .frame-bar {
+    @apply flex items-center gap-1.5 border-b border-white/10 bg-white/[0.04] px-3.5 py-2.5;
+  }
+  .frame-bar > span {
+    @apply size-2.5 rounded-full bg-white/15;
+  }
+  .frame-url {
+    @apply ml-2 min-w-0 truncate rounded-md bg-white/5 px-2.5 py-0.5 text-[11px] text-slate-500;
+  }
+
+  /* Contact */
+  .contact-panel {
+    background:
+      radial-gradient(120% 120% at 50% 0%, rgb(219 161 28 / 0.08), transparent 60%),
+      var(--color-navy-800);
+  }
+  .contact-tile {
+    @apply flex items-center gap-3 rounded-2xl border border-white/10 bg-navy-950/40 px-5 py-4 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:bg-navy-950/70;
+  }
+}
+
+/* ───────────── Décor ───────────── */
+
+/* Halo lumineux : dégradé radial (plus léger à afficher qu'un filter: blur) */
+.glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, var(--glow), transparent);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 25%, transparent 80%);
+}
+
+/* ───────────── Animations ───────────── */
+
+/* Apparition au scroll (seulement si JS actif) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+.float-a {
+  animation: float 6s ease-in-out infinite;
+}
+.float-b {
+  animation: float 7s ease-in-out 1.2s infinite;
+}
+
+@keyframes scroll-cue {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.scroll-cue-dot {
+  animation: scroll-cue 1.8s ease-in-out infinite;
 }
 
 /* Accessibilité : si l’utilisateur préfère réduire les animations */
 @media (prefers-reduced-motion: reduce) {
-  .fx-reveal {
-    transition: none;
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+  .float-a,
+  .float-b,
+  .scroll-cue-dot,
+  .animate-ping {
+    animation: none;
   }
 }

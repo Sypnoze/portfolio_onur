@@ -1,67 +1,94 @@
+import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
 import "./style.css";
 
-const year = document.getElementById("year");
-if (year) year.textContent = new Date().getFullYear();
+// Année du footer
+document.querySelectorAll("[data-year]").forEach((el) => {
+  el.textContent = String(new Date().getFullYear());
+});
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// Header : fond flouté dès qu'on scrolle
+const header = document.querySelector("[data-header]");
+const onScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 12);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
 
+// Menu mobile
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const menu = document.querySelector("[data-menu]");
 
-const slider = document.querySelector("[data-slider]");
-const track = document.querySelector("[data-track]");
-const prevBtn = document.querySelector("[data-prev]");
-const nextBtn = document.querySelector("[data-next]");
-const counter = document.querySelector("[data-counter]");
-const total = document.querySelector("[data-total]");
+const setMenu = (open) => {
+  if (!menuToggle || !menu) return;
+  menu.classList.toggle("hidden", !open);
+  header?.classList.toggle("is-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+  menuToggle.querySelector("[data-icon-open]")?.classList.toggle("hidden", open);
+  menuToggle.querySelector("[data-icon-close]")?.classList.toggle("hidden", !open);
+};
 
-if (slider && track && prevBtn && nextBtn) {
-  const slides = Array.from(track.children);
-  let index = 0;
+menuToggle?.addEventListener("click", () => {
+  setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+});
+menu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") setMenu(false);
+});
+window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => {
+  if (e.matches) setMenu(false);
+});
 
-  if (total) total.textContent = String(slides.length);
+// Lien actif dans la navigation selon la section visible
+const navLinks = document.querySelectorAll("[data-nav]");
+const sections = document.querySelectorAll("main section[id]");
 
-  const update = () => {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    if (counter) counter.textContent = String(index + 1);
-  };
-
-  prevBtn.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    update();
-  });
-
-  nextBtn.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    update();
-  });
-
-  // Support clavier (gauche / droite)
-  slider.setAttribute("tabindex", "0");
-  slider.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") prevBtn.click();
-    if (e.key === "ArrowRight") nextBtn.click();
-  });
-
-  update();
-}
-
-
-// Scroll reveal (Intersection Observer)
-const ratio = 0.12;
-
-const observer = new IntersectionObserver(
-  (entries, obs) => {
+const spy = new IntersectionObserver(
+  (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio > ratio) {
-        entry.target.classList.add("fx-reveal-visible");
-        obs.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${id}`) link.setAttribute("aria-current", "true");
+        else link.removeAttribute("aria-current");
+      });
     });
   },
-  {
-    root: null,
-    rootMargin: "0px 0px -10% 0px", // déclenche un peu avant le bas
-    threshold: ratio,
-  }
+  // Une section est « active » quand elle traverse le milieu de l'écran
+  { rootMargin: "-45% 0px -50% 0px" }
 );
+sections.forEach((section) => spy.observe(section));
 
-document.querySelectorAll(".fx-reveal").forEach((el) => observer.observe(el));
+// Apparition au scroll
+const reveal = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      obs.unobserve(entry.target);
+    });
+  },
+  { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+);
+document.querySelectorAll(".reveal").forEach((el) => reveal.observe(el));
+
+// Bouton « Copier l'email »
+const copyBtn = document.querySelector("[data-copy]");
+const copyStatus = document.querySelector("[data-copy-status]");
+
+copyBtn?.addEventListener("click", async () => {
+  const label = copyBtn.querySelector("[data-copy-label]");
+  const icon = copyBtn.querySelector("[data-copy-icon] use");
+  try {
+    await navigator.clipboard.writeText(copyBtn.dataset.copy);
+    label.textContent = "Copié !";
+    icon?.setAttribute("href", "#i-check");
+    if (copyStatus) copyStatus.textContent = "Adresse email copiée dans le presse-papiers.";
+  } catch {
+    label.textContent = "Échec de la copie";
+  }
+  setTimeout(() => {
+    label.textContent = "Copier";
+    icon?.setAttribute("href", "#i-copy");
+    if (copyStatus) copyStatus.textContent = "";
+  }, 2000);
+});
